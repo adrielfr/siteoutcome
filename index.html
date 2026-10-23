@@ -325,9 +325,9 @@ footer{padding:2rem 0;color:var(--mut);font-size:.9rem}
       <a class="btn btn-ghost" href="https://wa.me/55DDDNUMERO?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20a%20Outcome." target="_blank" rel="noopener">Chamar no WhatsApp</a>
     </div>
 
-    <form name="contato" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" id="form">
-      <input type="hidden" name="form-name" value="contato">
-      <p hidden><label>Não preencha: <input name="bot-field"></label></p>
+    <form id="form">
+
+      <p hidden aria-hidden="true"><label>Não preencha: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
       <label>Nome<input name="nome" required autocomplete="name"></label>
       <label>WhatsApp<input name="whatsapp" type="tel" required autocomplete="tel" placeholder="(00) 00000-0000"></label>
       <label>Empresa<input name="empresa" autocomplete="organization"></label>
@@ -403,25 +403,31 @@ footer{padding:2rem 0;color:var(--mut);font-size:.9rem}
     a.addEventListener('click', () => { $('#interesse').value = a.dataset.produto; })
   );
 
-  // Envio do formulário via Netlify Forms, sem recarregar a página
+  // Envio do formulário via Cloudflare Pages Function (/api/contato)
   const form = $('#form');
   const msg = $('#form-msg');
+  const submitBtn = form.querySelector('button[type="submit"]');
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     msg.className = '';
     msg.textContent = 'Enviando...';
+    if (submitBtn) submitBtn.disabled = true;
+    const data = Object.fromEntries(new FormData(form));
     try {
-      const res = await fetch('/', {
+      const res = await fetch('/api/contato', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(new FormData(form)).toString(),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
       });
-      if (!res.ok) throw new Error(res.status);
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(json.error || 'Erro ' + res.status);
       form.reset();
-      msg.textContent = 'Mensagem enviada. Entraremos em contato em breve.';
+      msg.textContent = json.message || 'Mensagem enviada. Entraremos em contato em breve.';
     } catch (err) {
       msg.className = 'erro';
-      msg.textContent = 'Não foi possível enviar agora. Tente de novo ou chame no WhatsApp.';
+      msg.textContent = err.message || 'Não foi possível enviar agora. Tente de novo ou chame no WhatsApp.';
+    } finally {
+      if (submitBtn) submitBtn.disabled = false;
     }
   });
 })();
