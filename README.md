@@ -34,7 +34,7 @@ O arquivo [`wrangler.toml`](./wrangler.toml) já foi criado na raiz do projeto c
 
 ```toml
 name = "siteoutcome"
-main = "_worker.js"
+pages_build_output_dir = "."
 compatibility_date = "2026-10-19"
 
 [[d1_databases]]
