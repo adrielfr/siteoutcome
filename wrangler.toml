@@ -1,8 +1,0 @@
-name = "siteoutcome"
-pages_build_output_dir = "."
-compatibility_date = "2026-10-19"
-
-[[d1_databases]]
-binding = "DB"
-database_name = "outcome-db"
-database_id = "8b59ed0c-52af-4bd2-8eb7-9230880fa2cc"
