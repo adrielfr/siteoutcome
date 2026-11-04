@@ -9,127 +9,161 @@
 <meta property="og:title" content="Outcome Tecnologia | De automações inteligentes a resultados reais">
 <meta property="og:description" content="Atenda mais rápido, não perca clientes no caminho e enxergue o que gera resultado.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23071426'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%2312c98a'/%3E%3C/svg%3E">
+<meta property="og:locale" content="pt_BR">
+<!-- Quando o domínio estiver definido, adicione: <link rel="canonical" href="https://SEU-DOMINIO/"> e og:url / og:image (1200x630) -->
+<link rel="icon" type="image/png" href="android-chrome-512.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600&family=Sora:wght@600;800&display=swap" rel="stylesheet">
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <style>
 :root{
-  --navy:#071426; --navy2:#0b1d36; --panel:#0f2547;
-  --line:rgba(255,255,255,.1); --txt:#eaf0f8; --mut:#9db0c9;
-  --em:#12c98a; --em-hot:#2bf0a6; --sky:#52a8ff;
+  --navy:#071426; --cream:#F5F4EF; --panel:#fff;
+  --line:#E6E8EB; --txt:#2B2F36; --mut:#66717D;
+  --em:#2675c9; --em-hot:#52a8ff; --sky:#52a8ff;
+  --accent:#F28C38; --accent-hover:#E57924; --accent-ink:#9B4D08; --accent-soft:#FFF2E5;
   --fh:"Sora",system-ui,sans-serif; --fb:"Figtree",system-ui,sans-serif;
 }
 *{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth;scroll-padding-top:84px;color-scheme:dark}
-body{background:var(--navy);color:var(--txt);font:400 1.0625rem/1.65 var(--fb);-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;scroll-padding-top:84px;color-scheme:light}
+body{background:#fff;color:var(--txt);font:400 1.0625rem/1.65 var(--fb);-webkit-font-smoothing:antialiased}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--sky);outline-offset:3px}
 .wrap{width:min(1120px,100% - 2.5rem);margin-inline:auto}
 h1,h2,h3,.btn,.numbers b,.kpis b{font-family:var(--fh)}
 
 /* Botões */
-.btn{display:inline-block;padding:.95rem 1.7rem;border-radius:12px;font-weight:600;font-size:1rem;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:background .2s,border-color .2s}
-.btn-primary{background:var(--em-hot);color:var(--navy)}
-.btn-primary:hover{background:#6bf7c4}
-.btn-ghost{border-color:var(--line);color:var(--txt)}
-.btn-ghost:hover{border-color:var(--em)}
+.btn{display:inline-block;padding:.95rem 1.7rem;border-radius:999px;font-weight:600;font-size:1rem;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:background .2s,border-color .2s,transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(13,54,93,.12)}
+.btn-primary{background:var(--accent);color:var(--navy)}
+.btn-primary:hover{background:var(--accent-hover)}
+.btn-ghost{border-color:#aab6c2;color:var(--navy)}
+.btn-ghost:hover{border-color:var(--em);background:#fff}
 .btn-sm{padding:.6rem 1.1rem;font-size:.95rem}
 
 /* Topo */
-.top{position:sticky;top:0;z-index:20;background:rgba(7,20,38,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top{position:sticky;top:0;z-index:20;background:rgba(7,20,38,.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.1)}
 .bar{display:flex;align-items:center;justify-content:space-between;min-height:68px}
-.logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;font:800 1.25rem var(--fh)}
-.logo img{display:block;width:56px;height:28px;object-fit:contain}
-.logo small{font:600 .85rem var(--fb);color:var(--mut);margin-left:.15rem}
+.logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;font:800 1.25rem var(--fh);color:#fff}
+.logo img{display:block;width:36px;height:36px;object-fit:contain}
+.logo small{font:600 .85rem var(--fb);color:#b8cce1;margin-left:.15rem}
 nav{display:flex;align-items:center;gap:1.8rem}
-nav a:not(.btn){text-decoration:none;color:var(--mut);font-weight:600}
-nav a:not(.btn):hover{color:var(--txt)}
-.menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--txt);padding:.5rem .9rem;border-radius:10px;font:600 .95rem var(--fb);cursor:pointer}
+nav a:not(.btn){text-decoration:none;color:#c2d2e2;font-weight:600}
+nav a:not(.btn):hover{color:#fff}
+.menu-btn{display:none;background:none;border:1px solid rgba(255,255,255,.24);color:#fff;padding:.5rem .9rem;border-radius:10px;font:600 .95rem var(--fb);cursor:pointer}
 
 /* Hero */
-.hero{padding:clamp(3.5rem,8vw,6.5rem) 0 clamp(3.5rem,7vw,5.5rem)}
+.hero{position:relative;overflow:hidden;padding:clamp(4.5rem,9vw,7.5rem) 0 clamp(4rem,8vw,6.5rem);background:radial-gradient(ellipse at 82% 45%,rgba(82,168,255,.16),transparent 40%),var(--navy)}
 .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:3.5rem;align-items:center}
 h1{font-weight:800;font-size:clamp(2.2rem,5vw,3.8rem);line-height:1.08;letter-spacing:-.025em;max-width:15ch}
+.eyebrow{display:inline-flex;align-items:center;gap:.55rem;margin-bottom:1.2rem;color:var(--em);font-size:.82rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--accent);border-radius:2px}
 .lead{margin-top:1.5rem;font-size:1.2rem;color:var(--mut);max-width:50ch}
 .cta-row{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.2rem}
 
-.panel{background:var(--navy2);border:1px solid var(--line);border-radius:20px;padding:1.5rem;display:grid;gap:1.4rem}
+.panel{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:26px;padding:1.7rem;display:grid;gap:1.4rem;box-shadow:0 24px 70px rgba(19,63,105,.1)}
 .chat{display:grid;gap:.6rem}
 .msg{max-width:84%;padding:.7rem 1rem;border-radius:16px;font-size:.95rem;line-height:1.45}
-.msg.in{background:rgba(255,255,255,.08);border-bottom-left-radius:4px}
-.msg.out{background:var(--em-hot);color:var(--navy);font-weight:600;margin-left:auto;border-bottom-right-radius:4px}
-.chat-meta{margin-left:auto;font-size:.8rem;color:var(--em-hot)}
+.msg.in{background:#f0f5fa;border-bottom-left-radius:4px}
+.msg.out{background:var(--accent);color:var(--navy);font-weight:600;margin-left:auto;border-bottom-right-radius:4px}
+.chat-meta{margin-left:auto;font-size:.8rem;color:var(--em)}
 .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;border-top:1px solid var(--line);padding-top:1.3rem}
 .kpis b{display:block;font-size:1.9rem;line-height:1.1}
-.kpis b.em{color:var(--em-hot)}
+.kpis b.em{color:var(--accent-ink)}
 .kpis span{font-size:.82rem;color:var(--mut)}
 .bars{display:flex;align-items:flex-end;gap:7px;height:84px}
-.bars i{flex:1;height:var(--h);background:var(--em);border-radius:5px 5px 0 0;transform-origin:bottom;animation:grow .9s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i)*70ms + .2s)}
-.bars i:last-child{background:var(--em-hot)}
+.bars i{flex:1;height:var(--h);background:#c9e2fb;border-radius:5px 5px 0 0;transform-origin:bottom;animation:grow .9s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i)*70ms + .2s)}
+.bars i:last-child{background:var(--accent)}
 @keyframes grow{from{transform:scaleY(0)}}
 
 /* Números */
-.numbers{background:var(--navy2);border-block:1px solid var(--line)}
+.numbers{background:#fff}
 .nums{display:grid;grid-template-columns:repeat(4,1fr)}
 .nums div{padding:2rem 1.5rem;border-left:1px solid var(--line)}
 .nums div:first-child{border-left:0;padding-left:0}
-.numbers b{display:block;font-size:2.3rem;line-height:1.1;margin-bottom:.35rem}
+.numbers b{display:block;font-size:2.3rem;line-height:1.1;margin-bottom:.35rem;color:var(--navy)}
 .numbers span{color:var(--mut);font-size:.95rem;display:block;max-width:22ch}
 
 /* Seções */
 .sec{padding:clamp(4rem,8vw,6.5rem) 0}
-.sec.alt{background:var(--navy2);border-block:1px solid var(--line)}
+.sec.dark{background:var(--navy)}
+.dark{color:#eaf0f8}
+.dark h1,.dark h2{color:#fff}
+.dark .sub,.dark .lead,.dark .hero-note{color:#bfd0e0}
+.dark .eyebrow,.dark .hero-note a{color:var(--sky)}
+.dark .btn-ghost{border-color:rgba(255,255,255,.34);color:#fff}
+.dark .btn-ghost:hover{border-color:var(--accent);background:rgba(242,140,56,.12)}
+.dark .panel,.dark .prod,.dark .q{color:var(--txt)}
+.dark .panel{box-shadow:0 24px 70px rgba(0,0,0,.35)}
+.dark .prod,.dark .q{box-shadow:0 14px 36px rgba(0,0,0,.25)}
+.dark .prod:hover{box-shadow:0 20px 44px rgba(0,0,0,.35)}
+.cta{background:#fff}
 h2{font-weight:800;font-size:clamp(1.7rem,3.4vw,2.5rem);line-height:1.15;letter-spacing:-.02em;max-width:22ch}
 .sub{margin-top:1rem;color:var(--mut);max-width:56ch;font-size:1.1rem}
 
 /* Produtos */
 .prods{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:3rem}
-.prod{display:flex;flex-direction:column;background:var(--navy2);border:1px solid var(--line);border-top:4px solid var(--c);border-radius:18px;padding:2.2rem 2rem}
-.ico{width:60px;height:60px;display:grid;place-items:center;border-radius:16px;color:var(--c);background:color-mix(in srgb,var(--c) 14%,transparent);margin-bottom:1.5rem}
+.prod{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:22px;padding:2.2rem 2rem;box-shadow:0 10px 32px rgba(19,63,105,.055);transition:transform .25s,box-shadow .25s}
+.prod:hover{transform:translateY(-5px);box-shadow:0 18px 42px rgba(19,63,105,.11)}
+.ico{width:60px;height:60px;display:grid;place-items:center;border-radius:18px;color:var(--c);background:color-mix(in srgb,var(--c) 12%,white);margin-bottom:1.5rem}
 .ico svg{width:32px;height:32px}
 .prod h3{font-size:1.55rem;line-height:1.2;color:var(--c)}
-.cap{align-self:flex-start;margin:.7rem 0 1.4rem;padding:.15rem .75rem;border:1px solid var(--line);border-radius:999px;font-size:.85rem;font-weight:600;color:var(--mut)}
-.pain{color:#fff;font-weight:600;margin-bottom:.7rem}
-.prod p:not(.cap):not(.pain):not(.mini){color:var(--mut)}
-.mini{display:flex;gap:1.5rem;margin-top:1.2rem;padding-top:1rem;border-top:1px solid var(--line);color:var(--mut);font-size:.9rem}
-.mini b{font:800 1.5rem var(--fh);color:#fff;margin-right:.2rem}
-.more{margin-top:auto;padding-top:1.6rem;color:var(--c);font-weight:600;text-decoration:none}
-.more:hover{text-decoration:underline;text-underline-offset:4px}
+.cap{align-self:flex-start;margin:.7rem 0 1.4rem;padding:.15rem .75rem;border:1px solid var(--line);border-radius:999px;font-size:.85rem;font-weight:600;color:var(--mut);background:var(--cream)}
+.pain{color:var(--navy);font-weight:600;margin-bottom:.7rem}
+.prod p:not(.cap):not(.pain){color:var(--mut);margin-bottom:auto}
+.more{align-self:flex-start;margin-top:1.6rem;padding:.6rem 1.15rem;border:1.5px solid color-mix(in srgb,var(--c) 40%,white);border-radius:999px;color:var(--c);font-weight:600;font-size:.95rem;text-decoration:none;transition:background .2s,border-color .2s}
+.more:hover{background:color-mix(in srgb,var(--c) 8%,white);border-color:var(--c)}
 
 /* Passos */
 .steps{list-style:none;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:3rem}
 .steps li{position:relative}
 .steps li:not(:last-child)::after{content:"";position:absolute;top:22px;left:60px;right:-1.5rem;height:2px;background:var(--line)}
-.n{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;border:2px solid var(--em);color:var(--em-hot);font:800 1.1rem var(--fh);margin-bottom:1.2rem;background:var(--navy2);position:relative;z-index:1}
+.n{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;border:2px solid var(--accent);color:var(--accent-ink);font:800 1.1rem var(--fh);margin-bottom:1.2rem;background:var(--accent-soft);position:relative;z-index:1}
 .steps h3{font-size:1.15rem;margin-bottom:.5rem}
 .steps p{color:var(--mut);font-size:1rem}
 
 /* Depoimentos */
 .quotes{display:grid;grid-template-columns:1.2fr 1fr;gap:1.4rem;margin-top:3rem}
-.q{background:var(--navy2);border:1px solid var(--line);border-radius:18px;padding:2rem;display:flex;flex-direction:column;justify-content:space-between;gap:1.6rem}
+.q{background:#fff;border:1px solid var(--line);border-radius:22px;padding:2rem;display:flex;flex-direction:column;justify-content:space-between;gap:1.6rem;box-shadow:0 10px 32px rgba(19,63,105,.055)}
 .q.big{grid-row:span 2;padding:2.6rem}
 .q blockquote p{font-size:1.1rem;line-height:1.6}
 .q.big blockquote p{font:600 clamp(1.35rem,2.4vw,1.8rem)/1.4 var(--fh);letter-spacing:-.01em}
 .q figcaption{display:flex;align-items:center;gap:.8rem}
 .q figcaption span:last-child{display:grid;line-height:1.3}
 .q small{color:var(--mut)}
-.av{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:rgba(18,201,138,.16);color:var(--em-hot);font:800 1rem var(--fh)}
+.av{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#e8f3fd;color:var(--em);font:800 1rem var(--fh);overflow:hidden}
+.av img{width:100%;height:100%;object-fit:cover}
 
 /* Contato */
 .contact{display:grid;grid-template-columns:1fr 1.05fr;gap:3.5rem;align-items:start}
 .contact .btn{margin-top:2rem}
-form{background:var(--navy);border:1px solid var(--line);border-radius:20px;padding:2rem;display:grid;gap:1.1rem}
+form{background:#fff;border:1px solid var(--line);border-radius:24px;padding:2rem;display:grid;gap:1.1rem;box-shadow:0 16px 44px rgba(19,63,105,.08)}
 form label{display:grid;gap:.4rem;font-weight:600;font-size:.95rem}
-input,select,textarea{width:100%;background:var(--navy2);color:var(--txt);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:.8rem 1rem;font:400 1rem var(--fb)}
+input,select,textarea{width:100%;background:var(--cream);color:var(--txt);border:1px solid var(--line);border-radius:12px;padding:.8rem 1rem;font:400 1rem var(--fb)}
 input:focus,select:focus,textarea:focus{outline:2px solid var(--em);border-color:transparent}
 textarea{resize:vertical}
 form .btn{margin-top:.4rem;width:100%}
-#form-msg{min-height:1.4em;font-size:.95rem;color:var(--em-hot)}
-#form-msg.erro{color:#ffb4a8}
+#form-msg{min-height:1.4em;font-size:.95rem;color:var(--em)}
+#form-msg.erro{color:#b42318}
 
-footer{padding:2rem 0;color:var(--mut);font-size:.9rem}
+footer{padding:2rem 0;color:#bfd0e0;font-size:.9rem;border-top:1px solid rgba(255,255,255,.12);background:var(--navy)}
+.foot-links a:hover{color:#fff}
 .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+
+/* Extras */
+.hero-note{margin-top:1.3rem;font-size:.95rem;color:var(--mut)}
+.hero-note a{color:var(--em);font-weight:600;text-underline-offset:3px}
+.btn-wa{display:inline-flex;align-items:center;gap:.5rem}
+.btn-wa svg{width:20px;height:20px;flex:none}
+.bars-label{font-size:.82rem;color:var(--mut);margin-bottom:.6rem}
+.consent{font-size:.85rem;color:var(--mut);line-height:1.5}
+.consent a{color:var(--em);text-underline-offset:3px}
+.cf-turnstile{max-width:100%}
+.wa-float{position:fixed;right:1.25rem;bottom:max(1.25rem,env(safe-area-inset-bottom));z-index:30;display:inline-flex;align-items:center;gap:.55rem;padding:.8rem 1.15rem;border-radius:999px;background:#15803d;color:#fff;font:600 .95rem var(--fb);text-decoration:none;box-shadow:0 10px 26px rgba(7,20,38,.28);transition:background .2s,transform .2s}
+.wa-float:hover{background:#166534;transform:translateY(-2px)}
+.wa-float svg{width:22px;height:22px;flex:none}
+.foot-links{display:flex;gap:1.4rem;flex-wrap:wrap}
+.foot-links a{text-underline-offset:3px}
 
 /* Responsivo */
 @media (max-width:960px){
@@ -145,19 +179,27 @@ footer{padding:2rem 0;color:var(--mut);font-size:.9rem}
 }
 @media (max-width:820px){
   .menu-btn{display:block}
-  nav{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:.5rem 1.25rem 1.25rem;background:var(--navy);border-bottom:1px solid var(--line)}
+  nav{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:.5rem 1.25rem 1.25rem;background:#10243a;border-bottom:1px solid rgba(255,255,255,.12)}
   nav.open{display:flex}
-  nav a:not(.btn){padding:.9rem 0;border-bottom:1px solid var(--line)}
+  nav a:not(.btn){padding:.9rem 0;border-bottom:1px solid rgba(255,255,255,.12)}
   nav .btn{margin-top:1rem;text-align:center}
 }
 @media (max-width:560px){
   .steps{grid-template-columns:1fr}
   .kpis b{font-size:1.5rem}
   form{padding:1.4rem}
+  .cta-row .btn{flex:1 1 100%;text-align:center;justify-content:center}
+  .wa-float{padding:.9rem}
+  .wa-float span{display:none}
+  footer{padding-bottom:5rem}
+}
+@media (max-width:400px){
+  form{padding:1rem;margin-inline:-.5rem}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .bars i{animation:none}
+  .btn:hover,.prod:hover,.wa-float:hover{transform:none}
 }
 </style>
 </head>
@@ -167,7 +209,7 @@ footer{padding:2rem 0;color:var(--mut);font-size:.9rem}
 <header class="top">
   <div class="wrap bar">
     <a href="#inicio" class="logo" aria-label="Outcome Tecnologia, início">
-      <img src="logo.jpg" alt="" width="56" height="28">
+      <img src="android-chrome-512.png" alt="" width="36" height="36">
       <span>Outcome <small>Tecnologia</small></span>
     </a>
     <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
@@ -183,15 +225,17 @@ footer{padding:2rem 0;color:var(--mut);font-size:.9rem}
 <main>
 
 <!-- 1. TOPO -->
-<section id="inicio" class="hero">
+<section id="inicio" class="hero dark">
   <div class="wrap hero-grid">
     <div>
+      <p class="eyebrow">Automação para atendimento e vendas</p>
       <h1>De automações inteligentes a resultados reais</h1>
       <p class="lead">A Outcome transforma processos manuais em previsibilidade de receita: sua empresa responde mais rápido, não perde cliente no caminho e enxerga o que realmente dá resultado.</p>
       <div class="cta-row">
         <a href="#contato" class="btn btn-primary">Quero uma conversa gratuita</a>
-        <a href="#produtos" class="btn btn-ghost">Conhecer as soluções</a>
+        <a class="btn btn-ghost btn-wa" href="https://wa.me/5548992064329?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20a%20Outcome." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>Chamar no WhatsApp</a>
       </div>
+      <p class="hero-note">Ou <a href="#produtos">conheça as três soluções</a>.</p>
     </div>
 
     <div class="panel" aria-hidden="true">
@@ -205,8 +249,11 @@ footer{padding:2rem 0;color:var(--mut);font-size:.9rem}
         <div><b>34</b><span>viraram venda</span></div>
         <div><b class="em">27%</b><span>de conversão</span></div>
       </div>
-      <div class="bars">
+      <div>
+        <p class="bars-label">Leads por semana (exemplo)</p>
+        <div class="bars">
         <i style="--h:34%;--i:0"></i><i style="--h:48%;--i:1"></i><i style="--h:42%;--i:2"></i><i style="--h:60%;--i:3"></i><i style="--h:56%;--i:4"></i><i style="--h:78%;--i:5"></i><i style="--h:92%;--i:6"></i>
+        </div>
       </div>
     </div>
   </div>
@@ -216,20 +263,20 @@ footer{padding:2rem 0;color:var(--mut);font-size:.9rem}
 <section id="resultados" class="numbers" aria-label="Resultados">
   <div class="wrap nums">
     <div><b>24/7</b><span>atendimento ativo, sem pausa nem fila</span></div>
-    <div><b data-to="4" data-suf=" s">4 s</b><span>tempo médio da primeira resposta</span></div>
+    <div><b>4 s</b><span>tempo médio da primeira resposta</span></div>
     <div><b data-to="35" data-pre="+" data-suf="%">+35%</b><span>de leads qualificados chegando ao comercial</span></div>
     <div><b data-to="100" data-suf="%">100%</b><span>dos contatos com follow-up registrado</span></div>
   </div>
 </section>
 
 <!-- 3. PRODUTOS -->
-<section id="produtos" class="sec">
+<section id="produtos" class="sec dark">
   <div class="wrap">
     <h2>Três soluções, cada uma resolve uma dor</h2>
     <p class="sub">Comece pela que mais pesa hoje ou combine as três em um só fluxo, do primeiro contato ao relatório.</p>
 
     <div class="prods">
-      <article class="prod" style="--c:var(--em-hot)">
+      <article class="prod" style="--c:#2675c9">
         <div class="ico">
           <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 8h32a2 2 0 0 1 2 2v20a2 2 0 0 1-2 2H22l-8 7v-7H8a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2z"/><circle cx="24" cy="20" r="7"/><path d="M24 16v4l3 2"/></svg>
         </div>
@@ -240,7 +287,7 @@ footer{padding:2rem 0;color:var(--mut);font-size:.9rem}
         <a href="#contato" class="more" data-produto="Resposta Instantânea">Quero atender sem demora</a>
       </article>
 
-      <article class="prod" style="--c:var(--sky)">
+      <article class="prod" style="--c:#b45309">
         <div class="ico">
           <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8h36L29 25v13l-10 5V25z"/></svg>
         </div>
@@ -251,7 +298,7 @@ footer{padding:2rem 0;color:var(--mut);font-size:.9rem}
         <a href="#contato" class="more" data-produto="Fluxo de Vendas">Quero organizar minhas vendas</a>
       </article>
 
-      <article class="prod" style="--c:var(--em)">
+      <article class="prod" style="--c:#0f766e">
         <div class="ico">
           <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7v34h34"/><path d="M14 31l9-10 7 6 11-14"/><circle cx="41" cy="13" r="2" fill="currentColor"/></svg>
         </div>
@@ -259,7 +306,6 @@ footer{padding:2rem 0;color:var(--mut);font-size:.9rem}
         <p class="cap">Dashboards e relatórios</p>
         <p class="pain">Parou de adivinhar se o negócio está indo bem?</p>
         <p>Com o Visão Clara, você acompanha em tempo real quantos leads estão chegando, quantos viram venda e onde focar para crescer mais.</p>
-        <p class="mini"><span><b>128</b> leads</span><span><b>34</b> vendas</span></p>
         <a href="#contato" class="more" data-produto="Visão Clara">Quero enxergar meus números</a>
       </article>
     </div>
@@ -267,7 +313,7 @@ footer{padding:2rem 0;color:var(--mut);font-size:.9rem}
 </section>
 
 <!-- 4. COMO FUNCIONA -->
-<section id="como-funciona" class="sec alt">
+<section id="como-funciona" class="sec">
   <div class="wrap">
     <h2>Como funciona, em quatro passos</h2>
     <p class="sub">Sem projeto interminável: você sabe o que será feito em cada etapa.</p>
@@ -281,7 +327,7 @@ footer{padding:2rem 0;color:var(--mut);font-size:.9rem}
 </section>
 
 <!-- 5. DEPOIMENTOS (exemplos: troque por depoimentos reais antes de publicar) -->
-<section id="cases" class="sec">
+<section id="cases" class="sec dark">
   <div class="wrap">
     <h2>Quem automatizou, sentiu a diferença</h2>
     <div class="quotes">
@@ -302,22 +348,21 @@ footer{padding:2rem 0;color:var(--mut);font-size:.9rem}
 </section>
 
 <!-- 6. CTA FINAL -->
-<section id="contato" class="sec alt">
+<section id="contato" class="sec cta">
   <div class="wrap contact">
     <div>
       <h2>Vamos tirar sua operação do manual?</h2>
       <p class="sub">Conte como funciona hoje o seu atendimento e suas vendas. Retornamos com um caminho claro para automatizar.</p>
-      <a class="btn btn-ghost" href="https://wa.me/5548992064329?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20a%20Outcome." target="_blank" rel="noopener">Chamar no WhatsApp</a>
+      <a class="btn btn-ghost btn-wa" href="https://wa.me/5548992064329?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20a%20Outcome." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>Chamar no WhatsApp</a>
     </div>
 
-    <form name="contato" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" id="form">
-      <input type="hidden" name="form-name" value="contato">
+    <form id="form" method="POST" action="/api/contact">
       <p hidden><label>Não preencha: <input name="bot-field"></label></p>
-      <label>Nome<input name="nome" required autocomplete="name"></label>
-      <label>WhatsApp<input name="whatsapp" type="tel" required autocomplete="tel" placeholder="(00) 00000-0000"></label>
-      <label>Empresa<input name="empresa" autocomplete="organization"></label>
+      <label>Nome<input name="nome" required maxlength="120" autocomplete="name"></label>
+      <label>WhatsApp<input name="whatsapp" type="tel" inputmode="numeric" required maxlength="20" pattern="\([0-9]{2}\) [0-9]{4,5}-[0-9]{4}" title="Digite um telefone com DDD: (00) 00000-0000" autocomplete="tel-national" placeholder="(00) 00000-0000"></label>
+      <label>Empresa (opcional)<input name="empresa" maxlength="120" autocomplete="organization"></label>
       <label>Tenho interesse em
-        <select name="interesse" id="interesse">
+        <select name="interesse" id="interesse" required>
           <option>Ainda não sei, quero conversar</option>
           <option>Resposta Instantânea</option>
           <option>Fluxo de Vendas</option>
@@ -325,7 +370,9 @@ footer{padding:2rem 0;color:var(--mut);font-size:.9rem}
           <option>As três soluções</option>
         </select>
       </label>
-      <label>Mensagem (opcional)<textarea name="mensagem" rows="3"></textarea></label>
+      <label>Mensagem (opcional)<textarea name="mensagem" maxlength="2000" rows="3"></textarea></label>
+      <div class="cf-turnstile" data-sitekey="0x4AAAAAAFjeNzSxnwE9A1uJ" data-action="contact" data-theme="light" data-language="pt-br"></div>
+      <p class="consent">Ao enviar, você concorda que usemos seus dados para retornar o contato, conforme a <a href="privacidade.html">Política de Privacidade</a>.</p>
       <button class="btn btn-primary" type="submit">Enviar mensagem</button>
       <p id="form-msg" role="status" aria-live="polite"></p>
     </form>
@@ -337,9 +384,11 @@ footer{padding:2rem 0;color:var(--mut);font-size:.9rem}
 <footer>
   <div class="wrap foot">
     <span>© <span id="ano">2026</span> Outcome Tecnologia</span>
-    <span>Automações e geração de leads</span>
+    <span class="foot-links"><a href="https://wa.me/5548992064329" target="_blank" rel="noopener">WhatsApp</a><a href="privacidade.html">Política de Privacidade</a></span>
   </div>
 </footer>
+
+<a class="wa-float" href="https://wa.me/5548992064329?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20a%20Outcome." target="_blank" rel="noopener" aria-label="Chamar no WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><span>WhatsApp</span></a>
 
 <script>
 (() => {
@@ -359,6 +408,12 @@ footer{padding:2rem 0;color:var(--mut);font-size:.9rem}
   };
   btn.addEventListener('click', () => setMenu(!nav.classList.contains('open')));
   $$('#nav a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && nav.classList.contains('open')) { setMenu(false); btn.focus(); }
+  });
+  document.addEventListener('click', (e) => {
+    if (nav.classList.contains('open') && !nav.contains(e.target) && !btn.contains(e.target)) setMenu(false);
+  });
 
   // Números da seção de resultados: contam quando entram na tela
   const fmt = (el, v) => {
@@ -388,25 +443,69 @@ footer{padding:2rem 0;color:var(--mut);font-size:.9rem}
     a.addEventListener('click', () => { $('#interesse').value = a.dataset.produto; })
   );
 
-  // Envio do formulário via Netlify Forms, sem recarregar a página
+  // Envia o formulário para a Function do Cloudflare Pages
   const form = $('#form');
   const msg = $('#form-msg');
+  const submit = form.querySelector('[type="submit"]');
+  const whatsappInput = form.querySelector('[name="whatsapp"]');
+  const formatWhatsapp = (value) => {
+    let digits = value.replace(/\D/g, '');
+    if (digits.startsWith('55') && (digits.length === 12 || digits.length === 13)) {
+      digits = digits.slice(2);
+    }
+    digits = digits.slice(0, 11);
+    if (digits.length <= 2) return digits ? `(${digits}` : '';
+
+    const local = digits.slice(2);
+    const prefixLength = digits.length === 11 ? 5 : 4;
+    const prefix = local.slice(0, prefixLength);
+    const suffix = local.slice(prefixLength, prefixLength + 4);
+    return `(${digits.slice(0, 2)}) ${prefix}${suffix ? `-${suffix}` : ''}`;
+  };
+  whatsappInput.addEventListener('input', () => {
+    const digitsBeforeCaret = whatsappInput.value
+      .slice(0, whatsappInput.selectionStart ?? whatsappInput.value.length)
+      .replace(/\D/g, '').length;
+    whatsappInput.value = formatWhatsapp(whatsappInput.value);
+
+    let caret = 0;
+    let digitsAtCaret = 0;
+    while (caret < whatsappInput.value.length && digitsAtCaret < digitsBeforeCaret) {
+      if (/\d/.test(whatsappInput.value[caret])) digitsAtCaret += 1;
+      caret += 1;
+    }
+    if (digitsBeforeCaret === 0 && whatsappInput.value.startsWith('(')) caret = 1;
+    whatsappInput.setSelectionRange(caret, caret);
+  });
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     msg.className = '';
+    if (!new FormData(form).get('cf-turnstile-response')) {
+      msg.className = 'erro';
+      msg.textContent = 'Confirme a verificação de segurança antes de enviar.';
+      return;
+    }
     msg.textContent = 'Enviando...';
+    submit.disabled = true;
     try {
-      const res = await fetch('/', {
+      const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams(new FormData(form)).toString(),
       });
-      if (!res.ok) throw new Error(res.status);
+      if (!res.ok) {
+        const result = await res.json();
+        throw new Error(result.error || 'Não foi possível salvar sua mensagem.');
+      }
       form.reset();
       msg.textContent = 'Mensagem enviada. Entraremos em contato em breve.';
     } catch (err) {
       msg.className = 'erro';
-      msg.textContent = 'Não foi possível enviar agora. Tente de novo ou chame no WhatsApp.';
+      msg.textContent = err.message || 'Não foi possível enviar agora. Tente de novo ou chame no WhatsApp.';
+    } finally {
+      submit.disabled = false;
+      if (window.turnstile) window.turnstile.reset();
     }
   });
 })();
