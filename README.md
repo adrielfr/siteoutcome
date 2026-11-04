@@ -6,12 +6,21 @@ Site estático servido pelo Worker `siteoutcome`. O formulário é gravado no ba
 
 O `wrangler.jsonc` define o Worker, o binding de assets e o binding D1 `OUTCOME_DB` para o banco `outcome-db` (`8b59ed0c-52af-4bd2-8eb7-9230880fa2cc`). O `.assetsignore` impede que arquivos de código, migrações e documentação sejam publicados como assets públicos.
 
-Para aplicar a tabela no D1 remoto e publicar, com Wrangler instalado e autenticado na conta Cloudflare correta:
+Para aplicar a tabela no D1 remoto manualmente, com Wrangler instalado e autenticado na conta Cloudflare correta:
 
 ```sh
 npx wrangler d1 migrations apply outcome-db --remote
 npx wrangler deploy
 ```
+
+### Deploy automático pelo GitHub
+
+O workflow `.github/workflows/deploy.yml` publica o Worker na Cloudflare a cada push para `main` e também pode ser executado manualmente pela aba Actions. Configure estes secrets no repositório, em **Settings > Secrets and variables > Actions**:
+
+- `CLOUDFLARE_API_TOKEN`: token da Cloudflare com permissão para publicar Workers na conta.
+- `CLOUDFLARE_ACCOUNT_ID`: ID da conta Cloudflare que contém o Worker.
+
+Não adicione esses valores ao código nem os envie pelo chat. O primeiro deploy só funcionará depois que ambos os secrets forem configurados.
 
 As migrações são versionadas em `migrations/`. Os envios ficam na tabela `contact_submissions`; o endpoint valida o conteúdo e usa parâmetros SQL vinculados antes de inserir os dados. O arquivo `functions/api/contact.js` contém o handler compartilhado pelo Worker.
 

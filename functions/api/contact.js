@@ -24,6 +24,12 @@ const ALLOWED_INTERESTS = new Set([
   'Fluxo de Vendas',
   'Visão Clara',
   'As três soluções',
+  'Desenvolvimento de Sites',
+  'Agentes de IA',
+  'Leads',
+  'CRM',
+  'Automação de WhatsApp e chatbot',
+  'Integrações',
 ]);
 
 const field = (formData, name, maxLength) => {

@@ -122,17 +122,9 @@ h2{font-weight:800;font-size:clamp(1.7rem,3.4vw,2.5rem);line-height:1.15;letter-
 .steps h3{font-size:1.15rem;margin-bottom:.5rem}
 .steps p{color:var(--mut);font-size:1rem}
 
-/* Depoimentos */
-.quotes{display:grid;grid-template-columns:1.2fr 1fr;gap:1.4rem;margin-top:3rem}
-.q{background:#fff;border:1px solid var(--line);border-radius:22px;padding:2rem;display:flex;flex-direction:column;justify-content:space-between;gap:1.6rem;box-shadow:0 10px 32px rgba(19,63,105,.055)}
-.q.big{grid-row:span 2;padding:2.6rem}
-.q blockquote p{font-size:1.1rem;line-height:1.6}
-.q.big blockquote p{font:600 clamp(1.35rem,2.4vw,1.8rem)/1.4 var(--fh);letter-spacing:-.01em}
-.q figcaption{display:flex;align-items:center;gap:.8rem}
-.q figcaption span:last-child{display:grid;line-height:1.3}
-.q small{color:var(--mut)}
-.av{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#e8f3fd;color:var(--em);font:800 1rem var(--fh);overflow:hidden}
-.av img{width:100%;height:100%;object-fit:cover}
+/* Serviços */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:3rem}
+.services-cta{justify-content:center;margin-top:2.5rem}
 
 /* Contato */
 .contact{display:grid;grid-template-columns:1fr 1.05fr;gap:3.5rem;align-items:start}
@@ -171,8 +163,7 @@ footer{padding:2rem 0;color:#bfd0e0;font-size:.9rem;border-top:1px solid rgba(25
   .prods{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr 1fr;row-gap:2.5rem}
   .steps li::after{display:none}
-  .quotes{grid-template-columns:1fr}
-  .q.big{grid-row:auto}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
   .nums{grid-template-columns:1fr 1fr}
   .nums div:nth-child(3){border-left:0;padding-left:0}
   .nums div:nth-child(n+3){border-top:1px solid var(--line)}
@@ -186,6 +177,7 @@ footer{padding:2rem 0;color:#bfd0e0;font-size:.9rem;border-top:1px solid rgba(25
 }
 @media (max-width:560px){
   .steps{grid-template-columns:1fr}
+  .services-grid{grid-template-columns:1fr}
   .kpis b{font-size:1.5rem}
   form{padding:1.4rem}
   .cta-row .btn{flex:1 1 100%;text-align:center;justify-content:center}
@@ -216,7 +208,7 @@ footer{padding:2rem 0;color:#bfd0e0;font-size:.9rem;border-top:1px solid rgba(25
     <nav id="nav" aria-label="Principal">
       <a href="#produtos">Soluções</a>
       <a href="#como-funciona">Como funciona</a>
-      <a href="#cases">Clientes</a>
+      <a href="#servicos">Serviços</a>
       <a href="#contato" class="btn btn-primary btn-sm">Falar com a Outcome</a>
     </nav>
   </div>
@@ -326,23 +318,45 @@ footer{padding:2rem 0;color:#bfd0e0;font-size:.9rem;border-top:1px solid rgba(25
   </div>
 </section>
 
-<!-- 5. DEPOIMENTOS (exemplos: troque por depoimentos reais antes de publicar) -->
-<section id="cases" class="sec dark">
+<!-- 5. SERVIÇOS -->
+<section id="servicos" class="sec dark">
   <div class="wrap">
-    <h2>Quem automatizou, sentiu a diferença</h2>
-    <div class="quotes">
-      <figure class="q big">
-        <blockquote><p>Antes a gente respondia o cliente só no dia seguinte. Agora ele recebe retorno em segundos, até de madrugada, e chega ao comercial já qualificado.</p></blockquote>
-        <figcaption><span class="av">M</span><span><strong>Mariana S.</strong><small>Clínica de estética</small></span></figcaption>
-      </figure>
-      <figure class="q">
-        <blockquote><p>Acabou a planilha de quem já foi atendido. O follow-up sai sozinho e o time só entra quando o cliente está pronto.</p></blockquote>
-        <figcaption><span class="av">R</span><span><strong>Rafael T.</strong><small>Distribuidora</small></span></figcaption>
-      </figure>
-      <figure class="q">
-        <blockquote><p>Pela primeira vez sei de onde vêm os leads e quantos viram venda. Decidir deixou de ser palpite.</p></blockquote>
-        <figcaption><span class="av">C</span><span><strong>Camila A.</strong><small>Escola de idiomas</small></span></figcaption>
-      </figure>
+    <h2>Mais serviços para acelerar seu negócio</h2>
+    <p class="sub">Da presença digital à automação dos processos, conectamos as ferramentas e soluções que sua operação precisa.</p>
+    <div class="services-grid">
+      <article class="prod" style="--c:#2675c9">
+        <div class="ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="7" width="38" height="27" rx="3"/><path d="M16 41h16M24 34v7M11 13h26"/></svg></div>
+        <h3>Desenvolvimento de Sites</h3>
+        <p>Sites responsivos e alinhados à sua marca para apresentar seus serviços e transformar visitas em oportunidades.</p>
+      </article>
+      <article class="prod" style="--c:#b45309">
+        <div class="ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 5v6M24 37v6M5 24h6M37 24h6M10.6 10.6l4.2 4.2m18.4 18.4 4.2 4.2m0-26.8-4.2 4.2m-18.4 18.4-4.2 4.2"/><circle cx="24" cy="24" r="10"/><path d="M20 24h8m-4-4v8"/></svg></div>
+        <h3>Agentes de IA</h3>
+        <p>Agentes inteligentes para apoiar atendimentos e automatizar tarefas, seguindo os objetivos e processos da sua empresa.</p>
+      </article>
+      <article class="prod" style="--c:#0f766e">
+        <div class="ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="19" cy="16" r="7"/><path d="M5 40v-4a14 14 0 0 1 28 0v4zM34 11a7 7 0 0 1 0 14m3 4a11 11 0 0 1 6 10v1"/></svg></div>
+        <h3>Leads</h3>
+        <p>Estratégias para atrair, captar e qualificar potenciais clientes, organizando as oportunidades para o time comercial.</p>
+      </article>
+      <article class="prod" style="--c:#7c3aed">
+        <div class="ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="8" width="36" height="32" rx="4"/><circle cx="17" cy="20" r="4"/><path d="M11 32a6 6 0 0 1 12 0m5-12h8m-8 8h8m-8 8h5"/></svg></div>
+        <h3>CRM</h3>
+        <p>Centralize contatos, histórico de interações e etapas de venda para acompanhar cada oportunidade com clareza.</p>
+      </article>
+      <article class="prod" style="--c:#15803d">
+        <div class="ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 39l2.2-8A17 17 0 1 1 16 38z"/><path d="M18 17c1 7 6 12 13 13l3-4-6-3-2 2c-2-1-3-2-4-4l2-2-3-6z"/></svg></div>
+        <h3>Automação de WhatsApp e chatbot</h3>
+        <p>Automatize conversas, respostas frequentes e encaminhamentos para agilizar o atendimento sem perder o toque humano.</p>
+      </article>
+      <article class="prod" style="--c:#c2410c">
+        <div class="ico"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="24" r="5"/><circle cx="38" cy="12" r="5"/><circle cx="38" cy="36" r="5"/><path d="M15 22l18-8M15 26l18 8"/></svg></div>
+        <h3>Integrações</h3>
+        <p>Conecte sistemas e ferramentas para manter os dados sincronizados e reduzir tarefas manuais entre plataformas.</p>
+      </article>
+    </div>
+    <div class="cta-row services-cta">
+      <a href="#contato" class="btn btn-primary">Quero conhecer os serviços</a>
     </div>
   </div>
 </section>
@@ -368,6 +382,12 @@ footer{padding:2rem 0;color:#bfd0e0;font-size:.9rem;border-top:1px solid rgba(25
           <option>Fluxo de Vendas</option>
           <option>Visão Clara</option>
           <option>As três soluções</option>
+          <option>Desenvolvimento de Sites</option>
+          <option>Agentes de IA</option>
+          <option>Leads</option>
+          <option>CRM</option>
+          <option>Automação de WhatsApp e chatbot</option>
+          <option>Integrações</option>
         </select>
       </label>
       <label>Mensagem (opcional)<textarea name="mensagem" maxlength="2000" rows="3"></textarea></label>
